@@ -479,12 +479,9 @@
 
     renderTime = function(hh, mm, ss, opts)
     {
-
-
-
         var to_return = '<table cellpadding="0" cellspacing="0" class="pika-time"><tbody><tr>' +
             (opts.timeLabel !== null ? '<td class="pika-time-label">'+opts.timeLabel+'</td>' : '') +
-            renderTimePicker(24, hh, 'pika-select-hour rounded text-pink-500', function(i) {
+            renderTimePicker(24, hh, 'pika-select-hour mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm', function(i) {
                 if (opts.use24hour) {
                     return i;
                 } else {
@@ -501,13 +498,13 @@
             opts.incrementHourBy);
 
         if (opts.showMinutes) {
-          to_return += '<td>:</td>' +
-              renderTimePicker(60, mm, 'pika-select-minute rounded text-pink-500', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
+          to_return += '<td class="px-3">:</td>' +
+              renderTimePicker(60, mm, 'pika-select-minute mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
         }
 
         if (opts.showSeconds) {
-            to_return += '<td>:</td>' +
-                renderTimePicker(60, ss, 'pika-select-second', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementSecondBy);
+            to_return += '<td class="px-3">:</td>' +
+                renderTimePicker(60, ss, 'pika-select-second mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementSecondBy);
         }
         return to_return + '</tr></tbody></table>';
     },
