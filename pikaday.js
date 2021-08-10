@@ -479,9 +479,12 @@
 
     renderTime = function(hh, mm, ss, opts)
     {
+
+
+
         var to_return = '<table cellpadding="0" cellspacing="0" class="pika-time"><tbody><tr>' +
             (opts.timeLabel !== null ? '<td class="pika-time-label">'+opts.timeLabel+'</td>' : '') +
-            renderTimePicker(24, hh, 'pika-select-hour', function(i) {
+            renderTimePicker(24, hh, 'pika-select-hour rounded text-pink-500', function(i) {
                 if (opts.use24hour) {
                     return i;
                 } else {
@@ -499,7 +502,7 @@
 
         if (opts.showMinutes) {
           to_return += '<td>:</td>' +
-              renderTimePicker(60, mm, 'pika-select-minute', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
+              renderTimePicker(60, mm, 'pika-select-minute rounded text-pink-500', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
         }
 
         if (opts.showSeconds) {
